@@ -2529,7 +2529,8 @@ button:disabled,
 
 /* Tiles */
 
-.tiles {
+.tiles,
+.tiles2 {
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
@@ -2541,11 +2542,13 @@ button:disabled,
     border-top: 0 !important;
 }
 
-.tiles+* {
+.tiles+*,
+.tiles2+* {
     border-top: 0 !important;
 }
 
-.tiles article {
+.tiles article,
+.tiles2 article {
     -moz-align-items: center;
     -webkit-align-items: center;
     -ms-align-items: center;
@@ -2571,24 +2574,29 @@ button:disabled,
     width: 40%;
 }
 
-.tiles article .image {
+.tiles article .image,
+.tiles2 article .image {
     display: none;
 }
 
-.tiles article header {
+.tiles article header,
+.tiles2 article header {
     position: relative;
     z-index: 3;
 }
 
-.tiles article h3 {
+.tiles article h3,
+.tiles2 article h3 {
     font-size: 1.75em;
 }
 
-.tiles article h3 a:hover {
+.tiles article h3 a:hover,
+.tiles2 article h3 a:hover {
     color: inherit !important;
 }
 
-.tiles article .link.primary {
+.tiles article .link.primary,
+.tiles2 article .link.primary {
     border: 0;
     height: 100%;
     left: 0;
@@ -2598,7 +2606,8 @@ button:disabled,
     z-index: 4;
 }
 
-.tiles article:before {
+.tiles article:before,
+.tiles2 article:before {
     -moz-transition: opacity 0.5s ease;
     -webkit-transition: opacity 0.5s ease;
     -ms-transition: opacity 0.5s ease;
@@ -2614,7 +2623,8 @@ button:disabled,
     z-index: 2;
 }
 
-.tiles article:after {
+.tiles article:after,
+.tiles2 article:after {
     background-color: rgba(36, 41, 67, 0.25);
     content: '';
     display: block;
@@ -2626,11 +2636,13 @@ button:disabled,
     z-index: 1;
 }
 
-.tiles article:hover:before {
+.tiles article:hover:before,
+.tiles2 article:hover:before {
     opacity: 0;
 }
 
-.tiles article.is-transitioning {
+.tiles article.is-transitioning,
+.tiles2 article.is-transitioning {
     -moz-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -ms-transform: scale(0.95);
@@ -2643,75 +2655,119 @@ button:disabled,
 }
 
 .tiles article:nth-child(4n - 1),
-.tiles article:nth-child(4n - 2) {
+.tiles article:nth-child(4n - 2),
+.tiles2 article:nth-child(4n - 1),
+.tiles2 article:nth-child(4n - 2) {
     width: 0%;
 }
 
 
 /* 타일 색깔 */
 
-.tiles article:nth-child(6n - 5):before {
+.tiles article:nth-child(6n - 5):before,
+.tiles2 article:nth-child(6n - 5):before {
     background-color: #6fc3df;
 }
 
-.tiles article:nth-child(6n - 4):before {
+.tiles article:nth-child(6n - 4):before,
+.tiles2 article:nth-child(6n - 4):before {
     background-color: #8d82c4;
 }
 
-.tiles article:nth-child(6n - 3):before {
+.tiles article:nth-child(6n - 3):before,
+.tiles2 article:nth-child(6n - 3):before {
     background-color: #ec8d81;
 }
 
-.tiles article:nth-child(6n - 2):before {
+.tiles article:nth-child(6n - 2):before,
+.tiles2 article:nth-child(6n - 2):before {
     background-color: #e7b788;
 }
 
-.tiles article:nth-child(6n - 1):before {
+.tiles article:nth-child(6n - 1):before,
+.tiles2 article:nth-child(6n - 1):before {
     background-color: #8ea9e8;
 }
 
-.tiles article:nth-child(6n):before {
+.tiles article:nth-child(6n):before,
+.tiles2 article:nth-child(6n):before {
     background-color: #87c5a4;
 }
 
-@media screen and (max-width: 1280px) {
-    .tiles article {
+@media screen and (min-width: 1280px) {
+    .tiles article,
+    .tiles2 article {
         padding: 4em 3em 2em 3em;
         height: 30vh;
         max-height: 30em;
         min-height: 20em;
-        width: 50% !important;
+        min-width: 50% !important;
+        /* width: 50% !important; */
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .tiles article,
+    .tiles2 article {
+        padding: 4em 3em 2em 3em;
+        height: 30vh;
+        max-height: 30em;
+        min-height: 20em;
+        min-width: 50% !important;
+        /* width: 50% !important; */
+    }
+    .tiles2 article {
+        width: 100% !important;
     }
 }
 
 @media screen and (max-width: 980px) {
     .tiles article {
-        width: 50% !important;
+        min-width: 50% !important;
+        /* width: 50% !important; */
+    }
+    .tiles2 article {
+        width: 100% !important;
     }
 }
 
 @media screen and (max-width: 736px) {
-    .tiles article {
+    .tiles article,
+    .tiles2 article {
         padding: 3em 1.5em 1em 1.5em;
         height: 16em;
         max-height: none;
         min-height: 0;
-        min-width: 50%;
-        /* width: 100% !important; */
+        min-width: 50% !important;
     }
-    .tiles article h3 {
+    .tiles2 article {
+        padding: 3em 1.5em 1em 1.5em;
+        height: 11em;
+        width: 100% !important;
+    }
+    .tiles article h3,
+    .tiles2 article h3 {
         font-size: 1.5em;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .tiles {
-        /* display: block; */
+    .tiles2 {
+        display: block;
     }
-    .tiles article {
-        font-size: 0.7em;
+    .tiles article h3 {
+        font-size: 1.2em;
+    }
+    .tiles article,
+    .tiles2 article {
+        /* font-size: 0.8em; */
         height: 13em;
         width: 50% !important;
+    }
+    .tiles2 article {
+        padding: 3em 1.5em 1em 1.5em;
+        height: 11em;
+        width: 100% !important;
     }
 }
 
@@ -3164,7 +3220,8 @@ body.is-preload #header.alt {
 
 /* Banner */
 
-#banner {
+#banner,
+#banner2 {
     -moz-align-items: center;
     -webkit-align-items: center;
     -ms-align-items: center;
@@ -3189,7 +3246,8 @@ body.is-preload #header.alt {
     top: -3.25em;
 }
 
-#banner:after {
+#banner:after,
+#banner2:after {
     -moz-transition: opacity 2.5s ease;
     -webkit-transition: opacity 2.5s ease;
     -ms-transition: opacity 2.5s ease;
@@ -3199,8 +3257,8 @@ body.is-preload #header.alt {
     -ms-transition-delay: 0.75s;
     transition-delay: 0.75s;
     pointer-events: none;
-    background-color: #6a89d1;
-    /* 배경색 */
+    background-color: #b3b3b386;
+    /* 배경색 #2a2f4a */
     content: '';
     display: block;
     height: 100%;
@@ -3212,11 +3270,17 @@ body.is-preload #header.alt {
     z-index: 1;
 }
 
-#banner h1 {
+#banner2:after {
+    background-color: rgba(97, 97, 97, 0.226);
+}
+
+#banner h1,
+#banner2 h1 {
     font-size: 3.25em;
 }
 
-#banner>.inner {
+#banner>.inner,
+#banner2>.inner {
     -moz-transition: opacity 1.5s ease, -moz-transform 0.5s ease-out, -moz-filter 0.5s ease, -webkit-filter 0.5s ease;
     -webkit-transition: opacity 1.5s ease, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s ease, -webkit-filter 0.5s ease;
     -ms-transition: opacity 1.5s ease, -ms-transform 0.5s ease-out, -ms-filter 0.5s ease, -webkit-filter 0.5s ease;
@@ -3226,23 +3290,28 @@ body.is-preload #header.alt {
     z-index: 2;
 }
 
-#banner>.inner .image {
+#banner>.inner .image,
+#banner2>.inner .image {
     display: none;
 }
 
-#banner>.inner header {
+#banner>.inner header,
+#banner2>.inner header {
     width: auto;
 }
 
-#banner>.inner header> :first-child {
+#banner>.inner header> :first-child,
+#banner2>.inner header> :first-child {
     width: auto;
 }
 
-#banner>.inner header> :first-child:after {
+#banner>.inner header> :first-child:after,
+#banner2>.inner header> :first-child:after {
     max-width: 100%;
 }
 
-#banner>.inner .content {
+#banner>.inner .content,
+#banner2>.inner .content {
     display: -moz-flex;
     display: -webkit-flex;
     display: -ms-flex;
@@ -3254,23 +3323,27 @@ body.is-preload #header.alt {
     margin: 0 0 2em 0;
 }
 
-#banner>.inner .content>* {
+#banner>.inner .content>*,
+#banner2>.inner .content>* {
     margin-right: 1.5em;
     margin-bottom: 0;
 }
 
-#banner>.inner .content> :last-child {
+#banner>.inner .content> :last-child,
+#banner2>.inner .content> :last-child {
     margin-right: 0;
 }
 
-#banner>.inner .content p {
+#banner>.inner .content p,
+#banner2>.inner .content p {
     font-size: 0.7em;
     font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
 }
 
-#banner.major {
+#banner.major,
+#banner2.major {
     height: 75vh;
     min-height: 30em;
     max-height: 50em;
@@ -3320,32 +3393,61 @@ body.is-preload #banner>.inner {
     opacity: 0;
 }
 
+@media screen and (min-width:1280px) {
+    #banner {
+        background-image: url('../../images/main_big_yellow.png');
+        background-size: cover;
+    }
+    #banner2 {
+        background-image: url('../../images/apayo_big_banner.png');
+        background-size: cover;
+    }
+}
+
 @media screen and (max-width: 1280px) {
     #banner {
         background-attachment: scroll;
+        background-image: url('../../images/main_big_yellow.png');
+        background-size: cover;
+    }
+    #banner2 {
+        background-attachment: scroll;
+        background-image: url('../../images/apayo_big_banner.png');
+        background-size: cover;
     }
 }
 
 @media screen and (max-width: 736px) {
-    #banner {
+    #banner,
+    #banner2 {
         padding: 5em 0 1em 0;
         height: auto;
         margin-bottom: -2.75em;
         max-height: none;
         min-height: 0;
         top: -2.75em;
+        background-image: url('../../images/main_big_yellow.png');
+        background-size: cover;
     }
-    #banner h1 {
+    #banner2 {
+        background-image: url('../../images/apayo_banner.png');
+        background-size: cover;
+    }
+    #banner h1,
+    #banner2 h1 {
         font-size: 2em;
     }
-    #banner>.inner .content {
+    #banner>.inner .content,
+    #banner2>.inner .content {
         display: block;
     }
-    #banner>.inner .content>* {
+    #banner>.inner .content>*,
+    #banner2>.inner .content>* {
         margin-right: 0;
         margin-bottom: 2em;
     }
-    #banner.major {
+    #banner.major,
+    #banner2.major {
         height: auto;
         min-height: 0;
         max-height: none;
@@ -3353,14 +3455,25 @@ body.is-preload #banner>.inner {
 }
 
 @media screen and (max-width: 480px) {
-    #banner {
+    #banner,
+    #banner2 {
         padding: 6em 0 2em 0;
+        background-image: url('../../images/main_yellow.png');
+        background-size: cover;
     }
-    #banner>.inner .content p br {
+    #banner2 {
+        background-image: url('../../images/apayo_banner.png');
+        background-size: cover;
+    }
+    #banner>.inner .content p br,
+    #banner2>.inner .content p br {
         display: none;
     }
     #banner.major {
         padding: 8em 0 4em 0;
+    }
+    #banner2.major {
+        height: 20em;
     }
 }
 
